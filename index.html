@@ -37,6 +37,11 @@
             transform: translateY(-3px);
             box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
         }
+        .cta-buy-button:hover, 
+        .cta-course-card:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+        }
         .feature-card {
             transition: all 0.3s ease;
             border: 1px solid #27272a;
@@ -202,7 +207,7 @@
                 <div class="flex flex-col lg:flex-row justify-center items-center gap-10">
 
                   <!-- Plan 1: Basic -->
-                  <div onclick="openModal('modal-basic')" class="feature-card w-full max-w-sm p-8 rounded-xl bg-gray-900 border-2 border-gray-700 cursor-pointer hover:scale-105 transition-transform">
+                  <div onclick="openModal('modal-basic')" class="feature-card w-full max-w-sm p-8 rounded-xl bg-gray-900 border-2 border-gray-700 cursor-pointer hover:scale-105 transition-transform cta-course-card">
                     <h3 class="text-2xl font-bold text-white text-center">Basic</h3>
                     <p class="text-center text-gray-400 mt-2 mb-6">For the essentials</p>
                     <p class="text-center text-4xl font-extrabold text-white mb-6">
@@ -213,11 +218,11 @@
                       <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Paper Trading</li>
                       <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Community Access</li>
                     </ul>
-                    <button class="w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition-colors">Start for Free</button>
+                    <button class="w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition-colors cta-buy-button">Start for Free</button>
                   </div>
 
                   <!-- Plan 2: Advance -->
-                  <div onclick="openModal('modal-advance')" class="feature-card w-full max-w-sm p-8 rounded-xl bg-gray-900 border-2 border-purple-500 relative cursor-pointer hover:scale-105 transition-transform">
+                  <div onclick="openModal('modal-advance')" class="feature-card w-full max-w-sm p-8 rounded-xl bg-gray-900 border-2 border-purple-500 relative cursor-pointer hover:scale-105 transition-transform cta-course-card">
                     <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</span>
                     <h3 class="text-2xl font-bold text-white text-center">Advance</h3>
                     <p class="text-center text-gray-400 mt-2 mb-6">For active traders</p>
@@ -230,11 +235,11 @@
                       <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Multiple Layouts</li>
                       <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Priority Support</li>
                     </ul>
-                    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition-colors">Choose Advance</button>
+                    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition-colors cta-buy-button">Choose Advance</button>
                   </div>
 
                   <!-- Plan 3: Pro -->
-                  <div onclick="openModal('modal-pro')" class="feature-card w-full max-w-sm p-8 rounded-xl bg-gray-900 border-2 border-purple-500 relative cursor-pointer hover:scale-105 transition-transform">
+                  <div onclick="openModal('modal-pro')" class="feature-card w-full max-w-sm p-8 rounded-xl bg-gray-900 border-2 border-purple-500 relative cursor-pointer hover:scale-105 transition-transform cta-course-card">
                     <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</span>
                     <h3 class="text-2xl font-bold text-white text-center">Pro</h3>
                     <p class="text-center text-gray-400 mt-2 mb-6">For active traders</p>
@@ -247,14 +252,14 @@
                       <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Multiple Layouts</li>
                       <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Priority Support</li>
                     </ul>
-                    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition-colors">Choose Pro</button>
+                    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition-colors cta-buy-button">Choose Pro</button>
                   </div>
                 </div>
               </div>
 
               <!-- Modals -->
               <div id="modal-basic" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
-                <div class="bg-gray-900 p-6 rounded-lg max-w-lg w-full relative">
+                <div class="bg-gray-900 p-6 rounded-lg w-full max-w-md sm:max-w-lg lg:max-w-2xl relative">
                   <button onclick="closeModal('modal-basic')" class="absolute top-2 right-2 text-white text-2xl">&times;</button>
                   <h2 class="text-2xl font-bold text-white mb-4">Basic Plan - Course Content</h2>
                   <p class="text-gray-300">This course includes basic charting, paper trading, and community access.</p>
@@ -262,7 +267,7 @@
               </div>
 
               <div id="modal-advance" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
-                <div class="bg-gray-900 p-6 rounded-lg max-w-lg w-full relative">
+                <div class="bg-gray-900 p-6 rounded-lg w-full max-w-md sm:max-w-lg lg:max-w-2xl relative">
                   <button onclick="closeModal('modal-advance')" class="absolute top-2 right-2 text-white text-2xl">&times;</button>
                   <h2 class="text-2xl font-bold text-white mb-4">Advance Plan - Course Content</h2>
                   <p class="text-gray-300">Everything in Basic plus advanced charting tools, multiple layouts, and priority support.</p>
@@ -330,6 +335,74 @@
                 </div>
             </section>
 
+            <!-- Contact Us Section -->
+            <section id="contact" class="py-20">
+              <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Contact Us</h2>
+                <p class="text-lg text-gray-400 mb-8">
+                  Feel free to drop your message here.
+                </p>
+
+                <form id="contact-form" class="space-y-4 max-w-3xl mx-auto"
+                  action="https://formsubmit.co/alwysbhpy@gmail.com"
+                  method="POST">
+                  
+                  <!-- FormSubmit settings -->
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="hidden" name="_next" value="">
+                  
+                  <div id="form-feedback" class="h-6 text-sm"></div>
+                  
+                  <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" id="name" name="Name" placeholder="Name" required
+                      class="form-input w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white">
+                    <input type="email" id="email" name="E-mail" placeholder="Email" required
+                      class="form-input w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white">
+                  </div>
+
+                  <textarea id="message" name="Message" rows="5" placeholder="Message" required
+                    class="form-input w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white"></textarea>
+
+                  <button type="submit"
+                    class="bg-purple-600 hover:bg-purple-700 font-semibold px-8 py-3 rounded-full text-white">
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </section>
+
+            <script>
+              const form = document.getElementById('contact-form');
+              const feedback = document.getElementById('form-feedback');
+
+              form.addEventListener('submit', function (e) {
+                e.preventDefault(); // stop default submission for feedback handling
+                feedback.style.color = '#a78bfa';
+                feedback.textContent = 'Sending...';
+
+                const formData = new FormData(form);
+
+                fetch(form.action, {
+                  method: 'POST',
+                  body: formData,
+                  headers: { 'Accept': 'application/json' }
+                })
+                .then(response => {
+                  if (response.ok) {
+                    feedback.style.color = '#22c55e';
+                    feedback.textContent = '✅ Thank you! Your message has been sent.';
+                    form.reset();
+                  } else {
+                    feedback.style.color = '#ef4444';
+                    feedback.textContent = '❌ Something went wrong. Please try again.';
+                  }
+                })
+                .catch(() => {
+                  feedback.style.color = '#ef4444';
+                  feedback.textContent = '❌ Network error. Please try again.';
+                });
+              });
+            </script>
         </main>
 
         <!-- Footer -->
