@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade with Plan - Your Gateway to Professional Trading</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #a78bfa, #6b21a8); /* light purple to deep purple */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+        }
+        .cta-button:hover {
+            /* Custom styles */
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid #27272a;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+            background-color: #1a1a1a;
+        }
+        .tradingview-widget-container {
+            filter: grayscale(30%) contrast(110%);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- App container -->
+    <div x-data="{ mobileMenuOpen: false }" class="min-h-screen">
+
+        <!-- Header / Navigation -->
+        <header class="sticky top-0 z-50 bg-black/50 backdrop-blur-lg border-b border-gray-800">
+            <nav class="container mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <a href="#" class="flex items-center space-x-3">
+                        <span class="text-2xl font-bold" style="font-family: 'Montserrat', sans-serif;">
+                          <span class="text-white">Trade</span>
+                          <span class="text-purple-600 gradient-text">with</span>
+                          <span class="text-white">Plan</span>
+                        </span>
+                    </a>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#features" class="text-gray-300 hover:text-purple-500 transition-colors">Features</a>
+                        <a href="#pricing" class="text-gray-300 hover:text-purple-500 transition-colors">Pricing</a>
+                        <a href="#testimonials" class="text-gray-300 hover:text-purple-500 transition-colors">Testimonials</a>
+                        <a href="#" class="text-gray-300 hover:text-purple-500 transition-colors">Login</a>
+                        <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">Get Started</a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-white focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden mt-4 space-y-4" x-transition>
+                    <a href="#features" class="block text-gray-300 hover:text-purple-500 transition-colors">Features</a>
+                    <a href="#pricing" class="block text-gray-300 hover:text-purple-500 transition-colors">Pricing</a>
+                    <a href="#testimonials" class="block text-gray-300 hover:text-purple-500 transition-colors">Testimonials</a>
+                    <a href="#" class="block text-gray-300 hover:text-purple-500 transition-colors">Login</a>
+                    <a href="#" class="block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors text-center">Get Started</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <section class="container mx-auto px-6 py-24 md:py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                    Trade with <span class="gradient-text">Precision</span>, Execute with <span class="gradient-text">Confidence</span>.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+                    Unlock your trading potential with our state-of-the-art platform. Powerful charts, real-time data, and a community of traders at your fingertips.
+                </p>
+                <div class="flex justify-center items-center space-x-4">
+                    <a href="#pricing" class="cta-button bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg text-lg">
+                        Explore Plans
+                    </a>
+                    <a href="#features" class="cta-button bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-lg text-lg">
+                        Learn More
+                    </a>
+                </div>
+            </section>
+
+            <!-- Interactive Chart Preview 
+            <section class="container mx-auto px-6 py-16">
+                 <div class="tradingview-widget-container rounded-xl overflow-hidden border-2 border-gray-800 shadow-2xl shadow-purple-900/20">
+                    <div id="tradingview_f4b5b"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                    new TradingView.widget(
+                    {
+                      "width": "100%",
+                      "height": 550,
+                      "symbol": "NASDAQ:AAPL",
+                      "interval": "D",
+                      "timezone": "Etc/UTC",
+                      "theme": "dark",
+                      "style": "1",
+                      "locale": "en",
+                      "toolbar_bg": "#f1f3f6",
+                      "enable_publishing": false,
+                      "withdateranges": true,
+                      "hide_side_toolbar": false,
+                      "allow_symbol_change": true,
+                      "container_id": "tradingview_f4b5b"
+                    }
+                    );
+                    </script>
+                </div>
+            </section> -->
+
+            <!-- Features Section -->
+            <section id="features" class="bg-black py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Why Choose <span class="gradient-text">Trade with Plan</span>?</h2>
+                        <p class="text-gray-400 mt-2">Everything you need to analyze the market and trade effectively.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        <!-- Feature 1 -->
+                        <div class="feature-card p-8 rounded-lg bg-gray-900">
+                            <h3 class="text-2xl font-bold text-white mb-3">Advanced Charting</h3>
+                            <p class="text-gray-400">Utilize a full suite of drawing tools, technical indicators, and chart types. Highly customizable to fit your trading style.</p>
+                        </div>
+                        <!-- Feature 2 -->
+                        <div class="feature-card p-8 rounded-lg bg-gray-900">
+                            <h3 class="text-2xl font-bold text-white mb-3">Real-Time Data</h3>
+                            <p class="text-gray-400">Get lightning-fast market data from global exchanges to make timely and informed decisions.</p>
+                        </div>
+                        <!-- Feature 3 -->
+                        <div class="feature-card p-8 rounded-lg bg-gray-900">
+                            <h3 class="text-2xl font-bold text-white mb-3">Community & Insights</h3>
+                            <p class="text-gray-400">Connect with other traders, share analyses, and get inspipurple by community-driven trading ideas.</p>
+                        </div>
+                        <!-- Feature 4 -->
+                        <div class="feature-card p-8 rounded-lg bg-gray-900">
+                            <h3 class="text-2xl font-bold text-white mb-3">Customizable Workspace</h3>
+                            <p class="text-gray-400">Tailor your trading environment. Arrange charts, news feeds, and tools exactly how you like them.</p>
+                        </div>
+                        <!-- Feature 5 -->
+                        <div class="feature-card p-8 rounded-lg bg-gray-900">
+                            <h3 class="text-2xl font-bold text-white mb-3">Paper Trading</h3>
+                            <p class="text-gray-400">Practice your strategies risk-free with a simulated account before you invest real capital.</p>
+                        </div>
+                        <!-- Feature 6 -->
+                        <div class="feature-card p-8 rounded-lg bg-gray-900">
+                            <h3 class="text-2xl font-bold text-white mb-3">24/7 Support</h3>
+                            <p class="text-gray-400">Our dedicated support team is always available to help you with any questions or issues.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section id="pricing" class="py-20">
+              <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                  <h2 class="text-3xl md:text-4xl font-bold text-white">
+                    Find the <span class="gradient-text">Perfect Plan</span>
+                  </h2>
+                  <p class="text-gray-400 mt-2">Start for free, then upgrade for more power.</p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row justify-center items-center gap-10">
+
+                  <!-- Plan 1: Basic -->
+                  <div onclick="openModal('modal-basic')" class="feature-card w-full max-w-sm p-8 rounded-xl bg-gray-900 border-2 border-gray-700 cursor-pointer hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-bold text-white text-center">Basic</h3>
+                    <p class="text-center text-gray-400 mt-2 mb-6">For the essentials</p>
+                    <p class="text-center text-4xl font-extrabold text-white mb-6">
+                      $0<span class="text-lg font-medium text-gray-400">/month</span>
+                    </p>
+                    <ul class="space-y-4 text-gray-300 mb-8">
+                      <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Standard charting</li>
+                      <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Paper Trading</li>
+                      <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Community Access</li>
+                    </ul>
+                    <button class="w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition-colors">Start for Free</button>
+                  </div>
+
+                  <!-- Plan 2: Advance -->
+                  <div onclick="openModal('modal-advance')" class="feature-card w-full max-w-sm p-8 rounded-xl bg-gray-900 border-2 border-purple-500 relative cursor-pointer hover:scale-105 transition-transform">
+                    <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</span>
+                    <h3 class="text-2xl font-bold text-white text-center">Advance</h3>
+                    <p class="text-center text-gray-400 mt-2 mb-6">For active traders</p>
+                    <p class="text-center text-4xl font-extrabold text-white mb-6">
+                      $49<span class="text-lg font-medium text-gray-400">/month</span>
+                    </p>
+                    <ul class="space-y-4 text-gray-300 mb-8">
+                      <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Everything in Basic</li>
+                      <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Advanced Charting Tools</li>
+                      <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Multiple Layouts</li>
+                      <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Priority Support</li>
+                    </ul>
+                    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition-colors">Choose Advance</button>
+                  </div>
+
+                  <!-- Plan 3: Pro -->
+                  <div onclick="openModal('modal-pro')" class="feature-card w-full max-w-sm p-8 rounded-xl bg-gray-900 border-2 border-purple-500 relative cursor-pointer hover:scale-105 transition-transform">
+                    <span class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</span>
+                    <h3 class="text-2xl font-bold text-white text-center">Pro</h3>
+                    <p class="text-center text-gray-400 mt-2 mb-6">For active traders</p>
+                    <p class="text-center text-4xl font-extrabold text-white mb-6">
+                      $49<span class="text-lg font-medium text-gray-400">/month</span>
+                    </p>
+                    <ul class="space-y-4 text-gray-300 mb-8">
+                      <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Everything in Basic</li>
+                      <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Advanced Charting Tools</li>
+                      <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Multiple Layouts</li>
+                      <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Priority Support</li>
+                    </ul>
+                    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition-colors">Choose Pro</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modals -->
+              <div id="modal-basic" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
+                <div class="bg-gray-900 p-6 rounded-lg max-w-lg w-full relative">
+                  <button onclick="closeModal('modal-basic')" class="absolute top-2 right-2 text-white text-2xl">&times;</button>
+                  <h2 class="text-2xl font-bold text-white mb-4">Basic Plan - Course Content</h2>
+                  <p class="text-gray-300">This course includes basic charting, paper trading, and community access.</p>
+                </div>
+              </div>
+
+              <div id="modal-advance" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
+                <div class="bg-gray-900 p-6 rounded-lg max-w-lg w-full relative">
+                  <button onclick="closeModal('modal-advance')" class="absolute top-2 right-2 text-white text-2xl">&times;</button>
+                  <h2 class="text-2xl font-bold text-white mb-4">Advance Plan - Course Content</h2>
+                  <p class="text-gray-300">Everything in Basic plus advanced charting tools, multiple layouts, and priority support.</p>
+                </div>
+              </div>
+
+              <div id="modal-pro" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
+                <div class="bg-gray-900 p-6 rounded-lg w-full max-w-md sm:max-w-lg lg:max-w-2xl relative">
+                  <button onclick="closeModal('modal-pro')" class="absolute top-2 right-2 text-white text-2xl">&times;</button>
+                  <h2 class="text-2xl font-bold text-white mb-4">Pro Plan - Course Content</h2>
+                  <p class="text-gray-300">Everything in Advance plus exclusive pro trader sessions and analytics tools.</p>
+                </div>
+              </div>
+            </section>
+
+            <script>
+            function openModal(id) {
+              document.getElementById(id).classList.remove('hidden');
+              document.getElementById(id).classList.add('flex');
+            }
+            function closeModal(id) {
+              document.getElementById(id).classList.add('hidden');
+              document.getElementById(id).classList.remove('flex');
+            }
+            </script>
+            
+            <!-- Testimonials Section -->
+            <section id="testimonials" class="bg-black py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Trusted by <span class="gradient-text">Traders Worldwide</span></h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        <!-- Testimonial 1 -->
+                        <div class="feature-card p-8 rounded-lg bg-gray-900">
+                            <p class="text-gray-300 mb-6">"The charting tools are phenomenal. I can perform my technical analysis faster and more accurately than ever before. A game-changer for my strategy."</p>
+                            <div class="flex items-center">
+                                <div class="ml-4">
+                                    <p class="font-bold text-white">Naveen K.</p>
+                                    <p class="text-sm text-gray-500">Day Trader</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="feature-card p-8 rounded-lg bg-gray-900">
+                            <p class="text-gray-300 mb-6">"I love the clean interface and the dark mode is easy on the eyes during long trading sessions. The platform is incpurpleibly fast and reliable."</p>
+                             <div class="flex items-center">
+                                <div class="ml-4">
+                                    <p class="font-bold text-white">Priya S.</p>
+                                    <p class="text-sm text-gray-500">Swing Trader</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="feature-card p-8 rounded-lg bg-gray-900">
+                            <p class="text-gray-300 mb-6">"As a beginner, the paper trading feature was invaluable. It gave me the confidence to start trading with real money. Highly recommended!"</p>
+                             <div class="flex items-center">
+                                <div class="ml-4">
+                                    <p class="font-bold text-white">Amit R.</p>
+                                    <p class="text-sm text-gray-500">New Investor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-black border-t border-gray-800">
+            <div class="container mx-auto px-6 py-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-center md:text-left mb-4 md:mb-0">
+                        <p class="text-gray-400">&copy; 2025 Trade with Plan. All Rights Reserved.</p>
+                        <p class="text-sm text-gray-500">Built for traders, by traders.</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
